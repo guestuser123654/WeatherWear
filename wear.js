@@ -29,9 +29,9 @@ function parseData(weather){
     temp = (windchill == null)? currTemp : windchill;
 
     //JQuery Set HTML
-	$("#current_temp").html(currTemp + "°C");
-	$("#windchill").html(windchill + " °C");
-	$("#wind").html(wind + " km per hour ")
+  $("#current_temp").html("Current Temperature: " + currTemp + " °C");
+  $("#windchill").html("Windchill: " + windchill + " °C");
+  $("#wind").html("Wind Speed" + wind + " km per hour ");
 };
 
 request.send();
