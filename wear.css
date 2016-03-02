@@ -1,8 +1,27 @@
 .title{
-	font-family: Raleway;
+	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
+}
+.var{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+.outfits{
+	width: 100%;
+    background: #eee;
+    margin: 10px auto;
+    position: relative;
+    text-align:center;
+}
+.outfits img{
+	height: 335px;
+	width: 225px;
+	background: green;
+    display:inline-block;
+    margin: 10px;
 }

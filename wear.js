@@ -11,6 +11,7 @@ request.onload = function() {
     //Success!
     var weather = JSON.parse(request.responseText);
     parseData(weather);
+    setOutfits(document);
 
   } else {
     // We reached our target server, but it returned an error
@@ -28,10 +29,50 @@ function parseData(weather){
     wind = weather.data.wind_speed_kph;
     temp = (windchill == null)? currTemp : windchill;
 
+
     //JQuery Set HTML
   $("#current_temp").html("Current Temperature: " + currTemp + " °C");
   $("#windchill").html("Windchill: " + windchill + " °C");
   $("#wind").html("Wind Speed: " + wind + " km per hour ");
 };
+function setOutfits(document){
+  if(temp >= 20){
+    $("#outfit1").attr("src" , "images/hot_capris.jpg");
+    $("#outfit2").attr("src" , "images/hot_dress.jpg");
+    $("#outfit3").attr("src" , "images/hot_kurta.jpg");
+    $("#outfit4").attr("src" , "images/hot_skirt.jpg");
+  } else if(temp < 20 && temp > 17){
+    $("#outfit1").attr("src" , "images/summer_romper.jpg");
+    $("#outfit2").attr("src" , "images/summer_dress.jpg");
+    $("#outfit3").attr("src" , "images/summer_shorts.jpg");
+    $("#outfit4").attr("src" , "images/summer_hat.jpg");
+  } else if(temp > 10 && temp <= 17){
+    $("#outfit1").attr("src" , "images/spring_bun.jpg");
+    $("#outfit2").attr("src" , "images/spring_floral.jpg");
+    $("#outfit3").attr("src" , "images/spring_jeans.jpg");
+    $("#outfit4").attr("src" , "images/spring_overalls.jpg");
+  } else if(temp > 5 && temp <= 10){
+    $("#outfit1").attr("src" , "images/fall_black.jpg");
+    $("#outfit2").attr("src" , "images/fall_wool.jpg");
+    $("#outfit3").attr("src" , "images/fall_sweater.jpg");
+    $("#outfit4").attr("src" , "images/fall_red.jpg");
+  } else if (temp > 0 && temp <= 5){
+    $("#outfit1").attr("src" , "images/chilly_plaid.jpg");
+    $("#outfit2").attr("src" , "images/chilly_skirt.jpg");
+    $("#outfit3").attr("src" , "images/chilly_sweater.jpg");
+    $("#outfit4").attr("src" , "images/chilly_tunic.jpg");
+  } else if(temp > -5  && temp <= 0){
+    $("#outfit1").attr("src" , "images/winter_black.jpg");
+    $("#outfit2").attr("src" , "images/winter_jacket.jpg");
+    $("#outfit3").attr("src" , "images/winter_beanie.jpg");
+    $("#outfit4").attr("src" , "images/winter_grey.jpg");
+  } else if(temp > -60){
+    $("#outfit1").attr("src" , "images/freeze_thermal.jpg");
+    $("#outfit2").attr("src" , "images/freeze_puffy.jpg");
+    $("#outfit3").attr("src" , "images/freeze_layers.jpg");
+    $("#outfit4").attr("src" , "images/freeze_hat.jpg");
+  }
+
+}
 
 request.send();
