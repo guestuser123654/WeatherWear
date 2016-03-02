@@ -31,7 +31,7 @@ function parseData(weather){
     //JQuery Set HTML
   $("#current_temp").html("Current Temperature: " + currTemp + " °C");
   $("#windchill").html("Windchill: " + windchill + " °C");
-  $("#wind").html("Wind Speed" + wind + " km per hour ");
+  $("#wind").html("Wind Speed: " + wind + " km per hour ");
 };
 
 request.send();
