@@ -37,6 +37,7 @@ function parseData(weather){
   $("#wind").html("Wind Speed: " + wind + " km per hour ");
 };
 function setOutfits(document){
+  temp = -5;
   if(temp >= 20){
     $("#h1").html("Hot summer, wear sunscreen!");
     $("#outfit1").attr("src" , "images/hot_capris.jpg");
