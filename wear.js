@@ -28,7 +28,7 @@ function parseData(weather){
     chill = weather.data.windchill_c;
     windchill = (chill == null)? 0 : chill;
     wind = weather.data.wind_speed_kph;
-    temp = (windchill == null)? currTemp : windchill;
+    temp = (chill == null)? currTemp : windchill;
 
 
     //JQuery Set HTML
